@@ -39,10 +39,10 @@ Build a system to manage and recommend GIFs to a user. Refer https://giphy.com/
 - Building Frontend:
   1. Building Responsive Views:
     1. Build a View to show all GIF’s
-      1. GIF’s - Populating from external api
-      2. Recommended GIF’s - Populating from GipherRecommenderSystem
-      3. Build a view to show bookmarked gifs
-      4. A view to authenticate users
+      - GIF’s - Populating from external api
+      - Recommended GIF’s - Populating from GipherRecommenderSystem
+      - Build a view to show bookmarked gifs
+      - A view to authenticate users
   2. Using Services to populate these data in views
   3. Stitching these views using Routes and Guards
   4. Making the UI Responsive
