@@ -75,7 +75,7 @@ This will install the required images from DockerHub and will automatically star
 Open a browser and enter the URL - 'http://localhost:8080/' to launch the Gipher Application.
 
 To bring down the application
-- Use Cntr+c to shutdown the docker containers.
+- Use 'Ctrl+c' to shutdown the docker containers.
 - Run $docker-compose down
 
 This will bring down and remove the docker containers.
@@ -84,6 +84,7 @@ This will bring down and remove the docker containers.
 ## Author
 
 Vaibhav Cariappa Chettimada
+
 c_vaibhav@in.ibm.com
 
 
