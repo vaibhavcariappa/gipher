@@ -1,30 +1,35 @@
+
+![Logo of the project](./GipherUI/src/assets/image/gipher.png)
+
 # Gipher - A Capsule Case Study
 
-## Problem Statement
+This project is an application which allows a user to access the GIF images from https://giphy.com/. It also allows the user to add the GIFs to Favourites, add and update comments to the GIFs, view popular GIFs in the Recommended section and also search for GIFs.
+The user has to first register and then login to get a personalized set of GIF images.
 
-Build a system to manage and recommend GIFs to a user. Refer https://giphy.com/
 
-## Requirements:
-1. The application needs to fetch gifs from https://developers.giphy.com/docs/
-2. A frontend where the user can search, view and bookmark gifs.
-3. A user can add a gif to bookmark and should be able to view bookmark list.
-3. A recommendation service should be able to store all the unique bookmarked gifs from all the users and maintain counter for number of users added a particular gifs into bookmark list. 
-4. An option to view recommended gifs should be available on frontend. 
+## Salient features of the Gipher application:
 
-## Modules:
-1. AccountManager - Should be able to manage user accounts
-2. GipherUI -
-  - User should be able to
-    - search GIFs
-    - bookmark GIFs
-    - should be able to see bookmarked GIFs
-  - Application should be a responsive which can smoothly run on mobile devices.
-3. GipherManager - Application should be able to store all his
-  - bookmarks
-  - searches
-4. GipherRecommenderSystem - should be able to store all the unique bookmarked gifs from all the users and maintain counter for number of users added a particular gifs into bookmark list.
+1. A secure registration and login process for the users.
+2. A user can
+  - view the most trending GIFs on the dashboard.
+  - add the GIFs to the Favourites.
+  - add and update comments for the selected GIFs.
+  - view the popular GIFs in the Recommended section. The Recommended section will show the number of likes of a particular GIFs based on the users adding that GIF to their favourites list. User can also add Gifs to their Favourites from the Recommended section.
+  - search for GIFs from https://giphy.com/. The individual searches are stored into the database.
 
-## Modules Required:
+
+## Modules and Services in the Gipher Application:
+
+AccountManager - This is the Authentication service for the Gipher application.
+GipherManager - This is the Gif Manager service for the Gipher application.
+GipherRecommenderSystem - This is the Gif Recommender service for the Gipher application.
+GipherUI - This is the Angular frontend service for the Gipher application.
+EurekaService - This is the Eureka service for the Gipher application.
+ZuulService - This is the Zuul service for the Gipher application.
+ 
+
+## Modules used in development of the Giper Application:
+
 - Spring Boot
 - MySQL, MongoDB
 - API Gateway
@@ -34,54 +39,47 @@ Build a system to manage and recommend GIFs to a user. Refer https://giphy.com/
 - CI (Gitlab Runner)
 - Docker, Docker Compose
 
-## Flow of Modules
 
-- Building Frontend:
-  1. Building Responsive Views:
-    - Build a View to show all GIF’s
-      - GIF’s - Populating from external api
-      - Recommended GIF’s - Populating from GipherRecommenderSystem
-      - Build a view to show bookmarked gifs
-      - A view to authenticate users
-  2. Using Services to populate these data in views
-  3. Stitching these views using Routes and Guards
-  4. Making the UI Responsive
-  5. E2E and Unit tests
-  6. Writing CI configuration file
-  8. Dockerizing the frontend
+## List of services and ports
 
-- Building the AccountManager
-  1. Creating a server in Spring Boot to facilitate registration and login using JWT token and MySQL
-  2. Writing Swagger Documentation
-  3. Unit Testing
-  4. Write CI Configuration
-  5. Dockerize the application
-  6. Write docker-compose file to build both frontend and backend application
-  
-- Create an API Gateway which can serve UI and API Request from same host
+Gipher_accountmanager: 9084
 
-- Building the GipherManager
-  1. Building a server in Spring Boot to facilitate CRUD operation over GIF’s and bookmarked resources stored in MongoDB
-  2. Writing Swagger Documentation
-  3. Build a Producer for RabbitMQ which
-    1. Produces events like what user bookmarked
-  4. Write Test Cases
-  5. Write CI Configuration
-  6. Dockerize the application
-  7. Update the docker-compose
+Gipher_giphermanager: 9085
 
-- Building a GipherRecommenderSystem
-  1. Building a Consumer for RabbitMQ
-    - i. On a new event generated Update the recommendations in the system. Store the     recommendation list in MongoDB.
-    - ii. Maintain list of unique recommended gifs based on what user added into       bookmark and keep counter for number of users added a particular gif into bookmark list.
-  2. Build an API to get recommendations
-  3. Writing Swagger documentation
-  4. Write Test Cases
-  5. Write CI Configuration
-  6. Dockerize the application
-  7. Update the docker-compose
-  8. Update the API Gateway
+Gipher_gipherrecommendersystem: 9086
 
-- Create Eureka server and make other services as client
+Gipher_frontend: 8080
 
-- Demonstrate the entire application
+Gipher_EurekaService: 9009
+
+Gipher_ZuulService: 9087
+
+Gipher_mongodb: 27017
+
+Gipher_mysqldb: 3306
+
+rabbitmq: 5672, 15672
+
+
+## Steps for installation and deployment of the Gipher Application
+
+Ensure that git, docker, docker-compose, npm, node.js are installed on your local machine.
+
+Clone this repository to your local machine.
+
+Open a terminal on your local machine and traverse to the root of this respository.
+
+Run $docker-compose up
+
+This will install the required images from DockerHub and will automatically start the application.
+
+Open a browser and enter the URL - 'http://localhost:8080/' to launch the Gipher Application.
+
+
+
+##Author
+
+Vaibhav Cariappa Chettimada
+c_vaibhav@in.ibm.com
+
+
