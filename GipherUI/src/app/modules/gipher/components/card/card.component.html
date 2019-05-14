@@ -1,0 +1,42 @@
+<mat-card class="example-card">
+  <mat-card-header class="header">
+    <mat-card-title>{{gipher.title}}</mat-card-title>
+  </mat-card-header>
+
+  <img mat-card-image class="image"
+   [src]='gipher.image.text' 
+   alt="Photo of the Gipher">
+
+  <mat-card-actions class="button">
+
+    <button mat-mini-fab class="addbutton" 
+    *ngIf="!favData && !recommend"
+    (click)="addButtonClick(gipher)"
+    matTooltip="Add to Favourites">
+      <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+    </button>
+
+    <button mat-mini-fab class="deletebutton" 
+    *ngIf="favData"
+    (click)="deleteButtonClick(gipher)"
+    matTooltip="Delete from Favourites">
+      <i class="material-icons">delete</i>
+    </button>    
+
+    <button mat-mini-fab class="updatebutton" 
+    *ngIf="favData"
+    (click)="addComments()"
+    matTooltip="Update Comments">
+      <i class="material-icons">create</i>
+    </button>  
+
+    <button mat-mini-fab class="recommendbutton" 
+    *ngIf="recommend"
+    matTooltip="Recommended">
+      <i class="material-icons">thumb_up</i>      
+    </button> 
+    
+    <i *ngIf="recommend"> {{gipher.counter}}</i>
+
+  </mat-card-actions>
+</mat-card>

@@ -1,5 +1,6 @@
 package com.stackroute.gipherrecommendersystem.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -7,13 +8,25 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Gipher {
 
     @Id
+    @JsonProperty("id")
     private String gifId;
+
+    @JsonProperty("title")
     private String gifName;
+
+    @JsonProperty("url")
     private String gifUrl;
+
+    @JsonProperty("source")
     private String source;
+
+    @JsonProperty("rating")
     private String rating;
+
     private String comments;
+
     private int counter;
+    
     private Image image;
 
     public Gipher() {

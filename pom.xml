@@ -44,6 +44,7 @@
 		<module>giphermanager</module>
 		<module>accountmanager</module>
 		<module>eurekaserver</module>
+		<module>zuulservice</module>
 	</modules>
 
 </project>

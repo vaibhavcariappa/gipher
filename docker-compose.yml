@@ -1,0 +1,107 @@
+version: '3'
+services:
+  Gipher_accountmanager:
+    image: vaibhavcariappa/gipheraccountmanager:v1
+    restart: always
+    network_mode: host
+    container_name: gipher_accountmanagercontainer
+    depends_on:
+      - Gipher_mysqldb
+      - Gipher_EurekaService
+      - rabbitmq
+    ports:
+      - 9084:9084
+    healthcheck:
+      test: "exit 0"
+
+  Gipher_giphermanager:
+    image: vaibhavcariappa/giphermanagerservice:v1
+    restart: always
+    network_mode: host
+    container_name: gipher_giphermanagercontainer
+    depends_on:
+      - Gipher_mongodb
+      - Gipher_EurekaService
+      - rabbitmq
+    ports:
+      - 9085:9085
+    healthcheck:
+      test: "exit 0"
+
+  Gipher_gipherrecommendersystem:
+    image: vaibhavcariappa/gipherrecommendersystem:v1
+    restart: always
+    network_mode: host
+    container_name: gipher_gipherrecommendersystemcontainer
+    depends_on:
+      - Gipher_mongodb
+      - Gipher_EurekaService
+      - rabbitmq
+    ports:
+      - 9086:9086
+    healthcheck:
+      test: "exit 0"
+
+  Gipher_frontend:
+    image: vaibhavcariappa/gipherangularservice:v1
+    network_mode: host
+    container_name: gipher_angularservicecontainer
+    ports:
+      - 8080:8080
+    healthcheck:
+      test: "exit 0"
+
+  Gipher_EurekaService:
+    image: vaibhavcariappa/giphereurekaservice:v1
+    restart: always
+    network_mode: host
+    container_name: gipher_eurekaservicecontainer
+    ports:
+      - 9009:9009
+    healthcheck:
+      test: "exit 0"
+
+  Gipher_ZuulService:
+    image: vaibhavcariappa/gipherzuulservice:v1
+    restart: always
+    network_mode: host
+    container_name: gipher_zuulservicecontainer
+    ports:
+      - 9087:9087
+    healthcheck:
+      test: "exit 0"
+
+  Gipher_mongodb:
+    image: mongo:3.4-jessie
+    network_mode: host
+    container_name: gipher_mongocontainer
+    ports:
+      - 27017:27017
+    healthcheck:
+      test: "exit 0"
+
+  Gipher_mysqldb:
+    image: mysql:5.5
+    network_mode: host
+    container_name: gipher_mysqlcontainer
+    ports:
+      - 3306:3306
+    environment:
+        MYSQL_DATABASE: gipherUserDb
+        MYSQL_USER: approot
+        MYSQL_PASSWORD: root123
+        MYSQL_ROOT_PASSWORD: root123
+    healthcheck:
+      test: "exit 0"
+
+
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    healthcheck:
+      test: "exit 0"
+
+
+

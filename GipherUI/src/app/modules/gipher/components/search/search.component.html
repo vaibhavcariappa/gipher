@@ -1,0 +1,20 @@
+
+<div class="search">
+  <mat-form-field class="field" appearance="outline">
+    <mat-label class="label">Search Gifs</mat-label>
+    <input  matInput [(ngModel)]="searchTag" id="searchInput" class="input">
+        <mat-icon matSuffix>
+      <i class="material-icons" id="search" (click)="searchButtonClick()">search</i>
+    </mat-icon>
+  </mat-form-field>
+  </div>
+  
+
+  
+  <div class="container">
+  <app-card
+   *ngFor = 'let gipher of giphers' 
+   [gipher]=gipher
+   (addToFavourites)= addToFavourites($event)> 
+  </app-card>
+  </div>

@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+
+    <a class="logo">
+      <img class="logoImg" src="assets\image\gipher.png">
+    </a>
+
+    <button class="header-buttons" (click)="displayGifList()" mat-button>Trending</button>
+
+    <button class="favourites-button" [routerLink]="['/Favourites']" mat-button>Favourites</button>
+
+    <button class="recommended-button" [routerLink]="['/Recommended']" mat-button>Recommended</button>
+
+    <button class="search-button" [routerLink]="['/Search']" mat-button>Search</button>
+
+    <button class="logout-button" (click)="logout()" mat-button>Logout</button>
+
+  </mat-toolbar-row>
+</mat-toolbar>

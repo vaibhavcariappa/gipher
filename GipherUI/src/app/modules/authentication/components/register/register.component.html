@@ -1,0 +1,61 @@
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Register</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form class="myForm" ng-controller="formController">
+
+      <mat-form-field appearance="outline">
+        <mat-label class="label">UserName</mat-label>
+        <mat-icon matPrefix>person</mat-icon>
+        <input id="username" class="matInputData"
+           matInput [(ngModel)]="user.username" name="username" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+          <mat-label class="label">Email</mat-label>
+          <mat-icon matPrefix>email</mat-icon>
+          <input id="email" class="matInputData" [formControl]="emailValidate"
+             matInput [(ngModel)]="user.email" name="email" required />
+          <mat-error *ngIf="emailValidate.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>     
+
+      <mat-form-field appearance="outline">
+          <mat-label class="label">Password</mat-label>
+          <mat-icon matPrefix>lock</mat-icon>
+          <input [type]="hide ? 'password' : 'text'" id="password" class="matInputData"
+            matInput [(ngModel)]="user.password" name="password" minlength="8" required />
+          <mat-icon id="eye" matSuffix (click)="hide = !hide">
+            {{hide ? 'visibility_off': 'visibility'}}
+          </mat-icon>            
+      </mat-form-field> 
+      
+    </form>
+
+
+  </mat-card-content>  
+
+  
+
+
+  <mat-card-actions> 
+
+    <button class="register-user" 
+    mat-raised-button
+    color="accent"
+    (click)="register()" >
+    Register
+    </button> 
+
+    <button class="register-user" 
+    mat-raised-button
+    color="accent"
+    (click)="onCancel()" >
+    Cancel
+    </button> 
+
+  </mat-card-actions>
+
+</mat-card>

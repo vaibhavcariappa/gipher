@@ -1,0 +1,49 @@
+.mat-toolbar{
+    background-color: #3aafa9;
+    height: 20vh;
+    display: flex;
+    text-align: right;
+}
+
+.mat-toolbar-row{
+    height: 20vh;
+}
+
+.logo{
+    height: 20vh;
+    margin-right: auto;    
+}
+
+.logoImg{
+    height: 20vh;
+}
+
+.header-buttons{
+    font-family: 'Germania One', cursive;
+    font-size: 1.2em;
+}
+
+.mat-menu-item{
+    font-family: 'Germania One', cursive;
+    font-size: 1em;    
+}
+
+.favourites-button{
+    font-family: 'Germania One', cursive;
+    font-size: 1.2em;   
+}
+
+.recommended-button{
+    font-family: 'Germania One', cursive;
+    font-size: 1.2em;   
+}
+
+.search-button{
+    font-family: 'Germania One', cursive;
+    font-size: 1.2em;   
+}
+
+.logout-button{
+    font-family: 'Germania One', cursive;
+    font-size: 1.2em;   
+}

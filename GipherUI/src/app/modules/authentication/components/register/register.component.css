@@ -1,0 +1,41 @@
+
+mat-card{
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    width: 30vw;
+    text-align: center;
+    margin: auto;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+
+
+mat-card-title{
+    font-family: 'Germania One', cursive;
+    font-size: 1.2em;
+    padding-left: 4vw;
+    padding-top: 3vh;
+}
+
+.myForm{
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    margin: auto;
+}
+
+.label{
+    font-family: 'Germania One', cursive;
+    font-size: 1.2em;
+    color: black;
+}
+
+mat-icon{
+    margin-right: 1em;
+    color: #9c1148; 
+}
+
+.mat-fab.mat-accent, .mat-flat-button.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent {
+    background-color: #3aafa9; 
+}

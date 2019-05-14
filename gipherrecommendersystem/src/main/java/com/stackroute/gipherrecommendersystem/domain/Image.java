@@ -7,7 +7,7 @@ public class Image {
 
     @Id
     private int imageId;
-    @JsonProperty("url")
+    @JsonProperty("text")
     private String imageUrl;
     @JsonProperty("size")
     private String imageSpec;

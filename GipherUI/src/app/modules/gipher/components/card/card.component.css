@@ -1,0 +1,38 @@
+.example-card{
+    display: flex;
+    flex-direction: column;
+    height: 45vh;
+    width: 20vw;
+    margin: 1em;
+    text-align: center;
+    background-color: aliceblue;
+    margin-top: 10vh;    
+}
+
+.header{
+    font-family: 'Germania One', cursive;
+    margin: auto;
+    color: black;
+}
+
+.mat-card-subtitle{
+    color: black;
+}
+
+.image{
+    height: 25vh;
+    width: 15vw;
+    margin: auto;
+}
+
+.mat-fab.mat-accent, .mat-flat-button.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent {
+    background-color: #3aafa9; 
+}
+
+.mat-icons{
+    color: aliceblue;
+}
+
+.material-icons{
+    color: aliceblue;
+}

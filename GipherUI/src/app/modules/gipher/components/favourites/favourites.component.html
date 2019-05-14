@@ -1,0 +1,8 @@
+<div class="container">
+  <app-card *ngFor = 'let gipher of giphers'
+      [gipher]='gipher'
+      [favData]='favData'
+      (deleteFromFavourites)= 'deleteFromFavourites($event)'
+      (updateComments)= 'updateComments($event)' >
+  </app-card>
+</div>
