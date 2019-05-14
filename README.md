@@ -20,12 +20,12 @@ The user has to first register and then login to get a personalized set of GIF i
 
 ## Modules and Services in the Gipher Application:
 
-AccountManager - This is the Authentication service for the Gipher application.
-GipherManager - This is the Gif Manager service for the Gipher application.
-GipherRecommenderSystem - This is the Gif Recommender service for the Gipher application.
-GipherUI - This is the Angular frontend service for the Gipher application.
-EurekaService - This is the Eureka service for the Gipher application.
-ZuulService - This is the Zuul service for the Gipher application.
+- AccountManager - This is the Authentication service for the Gipher application.
+- GipherManager - This is the Gif Manager service for the Gipher application.
+- GipherRecommenderSystem - This is the Gif Recommender service for the Gipher application.
+- GipherUI - This is the Angular frontend service for the Gipher application.
+- EurekaService - This is the Eureka service for the Gipher application.
+- ZuulService - This is the Zuul service for the Gipher application.
  
 
 ## Modules used in development of the Giper Application:
@@ -68,16 +68,20 @@ Ensure that git, docker, docker-compose, npm, node.js are installed on your loca
 Clone this repository to your local machine.
 
 Open a terminal on your local machine and traverse to the root of this respository.
-
-Run $docker-compose up
+- Run $docker-compose up
 
 This will install the required images from DockerHub and will automatically start the application.
 
 Open a browser and enter the URL - 'http://localhost:8080/' to launch the Gipher Application.
 
+To bring down the application
+- Use Cntr+c to shutdown the docker containers.
+- Run $docker-compose down
+
+This will bring down and remove the docker containers.
 
 
-##Author
+## Author
 
 Vaibhav Cariappa Chettimada
 c_vaibhav@in.ibm.com
